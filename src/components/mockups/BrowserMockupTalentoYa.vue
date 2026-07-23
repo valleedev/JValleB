@@ -1,5 +1,6 @@
 <script setup>
 import { Search, Bell, LayoutDashboard, Users, Clock, Wallet, FileText, BarChart3, Settings } from 'lucide-vue-next'
+import { useCountUp } from '../../composables/useCountUp'
 
 const navItems = [
   { icon: LayoutDashboard, label: 'Dashboard', active: true },
@@ -11,11 +12,9 @@ const navItems = [
   { icon: Settings, label: 'Configuración' },
 ]
 
-const stats = [
-  { label: 'Empleados activos', value: '38' },
-  { label: 'Asistencias hoy', value: '35/38' },
-  { label: 'Pendientes de nómina', value: '3' },
-]
+const empleadosActivos = useCountUp(38, { duration: 1000 })
+const asistenciasHoy = useCountUp(35, { duration: 1000, delay: 120 })
+const pendientesNomina = useCountUp(3, { duration: 700, delay: 240 })
 
 const chartPoints = '0,32 14,26 28,30 42,18 56,22 70,10 84,16 100,6'
 </script>
@@ -53,16 +52,33 @@ const chartPoints = '0,32 14,26 28,30 42,18 56,22 70,10 84,16 100,6'
       <div class="flex-1 p-4 space-y-3">
         <p class="text-text-secondary font-mono">Resumen general</p>
         <div class="grid grid-cols-3 gap-2">
-          <div v-for="s in stats" :key="s.label" class="rounded-lg border border-border bg-surface p-2.5">
-            <p class="text-text-secondary text-[10px] leading-tight">{{ s.label }}</p>
-            <p class="text-text-primary font-mono text-sm font-semibold mt-1">{{ s.value }}</p>
+          <div class="rounded-lg border border-border bg-surface p-2.5">
+            <p class="text-text-secondary text-[10px] leading-tight">Empleados activos</p>
+            <p class="text-text-primary font-mono text-sm font-semibold mt-1">{{ empleadosActivos }}</p>
+          </div>
+          <div class="rounded-lg border border-border bg-surface p-2.5">
+            <p class="text-text-secondary text-[10px] leading-tight">Asistencias hoy</p>
+            <p class="text-text-primary font-mono text-sm font-semibold mt-1">{{ asistenciasHoy }}/38</p>
+          </div>
+          <div class="rounded-lg border border-border bg-surface p-2.5">
+            <p class="text-text-secondary text-[10px] leading-tight">Pendientes de nómina</p>
+            <p class="text-text-primary font-mono text-sm font-semibold mt-1">{{ pendientesNomina }}</p>
           </div>
         </div>
 
         <div class="rounded-lg border border-border bg-surface p-3">
           <p class="text-text-secondary text-[10px] mb-2">Asistencias por día</p>
           <svg viewBox="0 0 100 36" class="w-full h-14" preserveAspectRatio="none">
-            <polyline :points="chartPoints" fill="none" stroke="#22C55E" stroke-width="1.5" vector-effect="non-scaling-stroke" />
+            <polyline
+              :points="chartPoints"
+              fill="none"
+              stroke="#22C55E"
+              stroke-width="1.5"
+              vector-effect="non-scaling-stroke"
+              pathLength="100"
+              stroke-dasharray="100"
+              class="animate-draw-line"
+            />
           </svg>
         </div>
       </div>

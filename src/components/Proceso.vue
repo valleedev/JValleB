@@ -27,16 +27,16 @@ const pasos = [
 
 <template>
   <section class="border-t border-border">
-    <div class="mx-auto max-w-6xl px-6 py-20 lg:py-28">
-      <h2 class="text-3xl sm:text-4xl font-bold text-text-primary text-center">
+    <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+      <h2 v-reveal class="text-3xl sm:text-4xl font-bold text-text-primary text-center">
         Un proceso <span class="text-accent">claro</span>, sin rodeos.
       </h2>
 
       <div class="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-6">
         <template v-for="(paso, i) in pasos" :key="paso.numero">
-          <div class="relative">
+          <div v-reveal="{ delay: i * 100 }" class="relative group">
             <div
-              class="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-elevated font-mono text-sm text-accent"
+              class="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-elevated font-mono text-sm text-accent transition-transform duration-300 group-hover:scale-110"
             >
               {{ paso.numero }}
             </div>
@@ -45,7 +45,8 @@ const pasos = [
 
             <ArrowRight
               v-if="i < pasos.length - 1"
-              class="hidden lg:block absolute top-2.5 -right-9 h-4 w-4 text-border"
+              class="animate-arrow-slide hidden lg:block absolute top-2.5 -right-9 h-4 w-4 text-border"
+              :style="{ animationDelay: `${i * 100}ms` }"
             />
           </div>
         </template>

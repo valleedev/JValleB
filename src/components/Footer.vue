@@ -10,16 +10,16 @@ const links = [
 const socials = [
   { icon: Instagram, href: 'https://instagram.com/jvalleb', label: 'Instagram' },
   { icon: Linkedin, href: 'https://linkedin.com/in/jvalleb', label: 'LinkedIn' },
-  { icon: Mail, href: 'mailto:hola@jvalleb.com', label: 'Correo' },
+  { icon: Mail, href: 'mailto:jvalleb@voida.com.co', label: 'Correo' },
 ]
 </script>
 
 <template>
   <footer class="border-t border-border">
-    <div class="mx-auto max-w-6xl px-6 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+    <div class="mx-auto max-w-7xl px-6 py-12 flex flex-col md:flex-row md:items-center md:justify-between gap-8">
       <div>
         <a href="#" class="flex items-center gap-0.5 font-mono text-lg font-semibold text-text-primary">
-          <span class="text-accent">&gt;</span>jvalleb
+          <span class="text-accent">&gt;</span>JValleB
         </a>
         <p class="mt-2 text-sm text-text-secondary max-w-xs">
           Sistemas y automatizaciones a medida para empresas que quieren crecer.
@@ -45,7 +45,7 @@ const socials = [
           target="_blank"
           rel="noopener noreferrer"
           :aria-label="s.label"
-          class="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-text-secondary hover:text-accent hover:border-accent/40 transition-colors"
+          class="flex h-9 w-9 items-center justify-center rounded-lg border border-border text-text-secondary transition-all duration-200 hover:text-accent hover:border-accent/40 hover:-translate-y-0.5"
         >
           <component :is="s.icon" class="h-4 w-4" />
         </a>
@@ -53,8 +53,8 @@ const socials = [
     </div>
 
     <div class="border-t border-border">
-      <p class="mx-auto max-w-6xl px-6 py-5 text-xs text-text-secondary">
-        © {{ new Date().getFullYear() }} jvalleb. Todos los derechos reservados.
+      <p class="mx-auto max-w-7xl px-6 py-5 text-xs text-text-secondary">
+        © {{ new Date().getFullYear() }} JValleB. Todos los derechos reservados.
       </p>
     </div>
   </footer>

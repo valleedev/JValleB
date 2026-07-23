@@ -46,10 +46,4 @@ vite.config.js
 
 ## Pendiente antes de publicar
 
-En `src/components/CTAFinal.vue` reemplazar los placeholders:
-
-- `CTA_LINK`: link real de WhatsApp (`https://wa.me/<numero>`) o Calendly.
-- `EMAIL`: correo de contacto real.
-- `WHATSAPP_DISPLAY`: número visible.
-
 En `src/components/Footer.vue` ajustar los links de Instagram/LinkedIn al perfil real.

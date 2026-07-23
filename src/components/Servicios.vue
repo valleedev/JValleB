@@ -22,8 +22,8 @@ const servicios = [
 
 <template>
   <section id="servicios" class="border-t border-border">
-    <div class="mx-auto max-w-6xl px-6 py-20 lg:py-28">
-      <h2 class="text-3xl sm:text-4xl font-bold text-text-primary text-center">
+    <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+      <h2 v-reveal class="text-3xl sm:text-4xl font-bold text-text-primary text-center">
         Servicios <span class="text-accent">principales</span>
       </h2>
 
@@ -31,9 +31,12 @@ const servicios = [
         <div
           v-for="(s, i) in servicios"
           :key="s.titulo"
-          class="group flex flex-col rounded-xl border border-border bg-surface p-7 hover:border-accent/40 transition-colors"
+          v-reveal="{ delay: i * 100 }"
+          class="group flex flex-col rounded-xl border border-border bg-surface p-7 transition-all duration-300 hover:border-accent/40 hover:-translate-y-1.5"
         >
-          <div class="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-elevated">
+          <div
+            class="flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-elevated transition-transform duration-300 group-hover:scale-110"
+          >
             <component :is="s.icon" class="h-5 w-5 text-accent" />
           </div>
 

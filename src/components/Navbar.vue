@@ -28,9 +28,9 @@ function closeMobile() {
     class="sticky top-0 z-50 border-b transition-colors"
     :class="scrolled ? 'bg-bg/90 backdrop-blur border-border' : 'bg-transparent border-transparent'"
   >
-    <nav class="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
+    <nav class="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
       <a href="#" class="flex items-center gap-0.5 font-mono text-lg font-semibold text-text-primary">
-        <span class="text-accent">&gt;</span>jvalleb
+        <span class="text-accent">&gt;</span>JValleB
       </a>
 
       <div class="hidden md:flex items-center gap-8">
@@ -38,16 +38,17 @@ function closeMobile() {
           v-for="link in links"
           :key="link.href"
           :href="link.href"
-          class="text-sm text-text-secondary hover:text-text-primary transition-colors"
+          class="group relative text-sm text-text-secondary hover:text-text-primary transition-colors"
         >
           {{ link.label }}
+          <span
+            class="absolute -bottom-1 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full"
+          />
         </a>
-      </div>
 
-      <div class="hidden md:block">
         <a
           href="#cta-final"
-          class="inline-flex items-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-bg hover:bg-accent-hover transition-colors"
+          class="inline-flex items-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-bg transition-all duration-200 hover:bg-accent-hover hover:scale-[1.04] active:scale-[0.97]"
         >
           Agendar diagnóstico
         </a>
@@ -59,23 +60,32 @@ function closeMobile() {
       </button>
     </nav>
 
-    <div v-if="mobileOpen" class="md:hidden border-t border-border bg-bg px-6 py-4 space-y-4">
-      <a
-        v-for="link in links"
-        :key="link.href"
-        :href="link.href"
-        class="block text-sm text-text-secondary hover:text-text-primary"
-        @click="closeMobile"
-      >
-        {{ link.label }}
-      </a>
-      <a
-        href="#cta-final"
-        class="block text-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-bg hover:bg-accent-hover transition-colors"
-        @click="closeMobile"
-      >
-        Agendar diagnóstico
-      </a>
-    </div>
+    <Transition
+      enter-active-class="transition-all duration-200 ease-out"
+      enter-from-class="opacity-0 -translate-y-2"
+      enter-to-class="opacity-100 translate-y-0"
+      leave-active-class="transition-all duration-150 ease-in"
+      leave-from-class="opacity-100 translate-y-0"
+      leave-to-class="opacity-0 -translate-y-2"
+    >
+      <div v-if="mobileOpen" class="md:hidden border-t border-border bg-bg px-6 py-4 space-y-4">
+        <a
+          v-for="link in links"
+          :key="link.href"
+          :href="link.href"
+          class="block text-sm text-text-secondary hover:text-text-primary"
+          @click="closeMobile"
+        >
+          {{ link.label }}
+        </a>
+        <a
+          href="#cta-final"
+          class="block text-center rounded-lg bg-accent px-4 py-2.5 text-sm font-semibold text-bg hover:bg-accent-hover transition-colors"
+          @click="closeMobile"
+        >
+          Agendar diagnóstico
+        </a>
+      </div>
+    </Transition>
   </header>
 </template>

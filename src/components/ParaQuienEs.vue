@@ -17,11 +17,11 @@ const noEres = [
 
 <template>
   <section id="para-quien-es" class="border-t border-border">
-    <div class="mx-auto max-w-6xl px-6 py-20 lg:py-28">
-      <h2 class="text-3xl sm:text-4xl font-bold text-text-primary text-center">Para quién es esto</h2>
+    <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
+      <h2 v-reveal class="text-3xl sm:text-4xl font-bold text-text-primary text-center">Para quién es esto</h2>
 
       <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div class="rounded-xl border border-border bg-surface p-8">
+        <div v-reveal class="rounded-xl border border-border bg-surface p-8 transition-colors duration-300 hover:border-accent/40">
           <h3 class="text-lg font-semibold text-text-primary">Es para ti si...</h3>
           <ul class="mt-5 space-y-4">
             <li v-for="p in siEres" :key="p" class="flex items-start gap-3">
@@ -31,7 +31,7 @@ const noEres = [
           </ul>
         </div>
 
-        <div class="rounded-xl border border-border bg-surface p-8">
+        <div v-reveal="{ delay: 120 }" class="rounded-xl border border-border bg-surface p-8 transition-colors duration-300 hover:border-border">
           <h3 class="text-lg font-semibold text-text-primary">No es para ti si...</h3>
           <ul class="mt-5 space-y-4">
             <li v-for="p in noEres" :key="p" class="flex items-start gap-3">

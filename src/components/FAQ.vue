@@ -35,23 +35,28 @@ function toggle(i) {
 <template>
   <section class="border-t border-border">
     <div class="mx-auto max-w-3xl px-6 py-20 lg:py-28">
-      <h2 class="text-3xl sm:text-4xl font-bold text-text-primary text-center">Preguntas frecuentes</h2>
+      <h2 v-reveal class="text-3xl sm:text-4xl font-bold text-text-primary text-center">Preguntas frecuentes</h2>
 
-      <div class="mt-12 divide-y divide-border rounded-xl border border-border bg-surface overflow-hidden">
+      <div v-reveal="{ delay: 100 }" class="mt-12 divide-y divide-border rounded-xl border border-border bg-surface overflow-hidden">
         <div v-for="(item, i) in preguntas" :key="item.q">
           <button
-            class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+            class="w-full flex items-center justify-between gap-4 px-6 py-5 text-left transition-colors hover:bg-elevated/50"
             @click="toggle(i)"
             :aria-expanded="openIndex === i"
           >
             <span class="text-text-primary font-medium">{{ item.q }}</span>
             <ChevronDown
-              class="h-5 w-5 shrink-0 text-text-secondary transition-transform duration-200"
+              class="h-5 w-5 shrink-0 text-text-secondary transition-transform duration-300"
               :class="openIndex === i && 'rotate-180 text-accent'"
             />
           </button>
-          <div v-show="openIndex === i" class="px-6 pb-5 text-sm text-text-secondary leading-relaxed">
-            {{ item.a }}
+          <div
+            class="grid transition-[grid-template-rows] duration-300 ease-out"
+            :class="openIndex === i ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'"
+          >
+            <div class="overflow-hidden">
+              <p class="px-6 pb-5 text-sm text-text-secondary leading-relaxed">{{ item.a }}</p>
+            </div>
           </div>
         </div>
       </div>
