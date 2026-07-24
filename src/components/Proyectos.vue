@@ -7,7 +7,7 @@ import PhoneMockupCuadreApp from './mockups/PhoneMockupCuadreApp.vue'
 <template>
   <section id="proyectos" class="border-t border-border">
     <div class="mx-auto max-w-7xl px-6 py-20 lg:py-28">
-      <h2 v-reveal class="text-3xl sm:text-4xl font-bold text-text-primary">Proyectos propios en validación</h2>
+      <h2 v-reveal class="text-3xl sm:text-4xl font-bold text-text-primary">Proyectos</h2>
 
       <div class="mt-14 grid grid-cols-1 lg:grid-cols-2 gap-6">
         <!-- TalentoYa -->
@@ -22,10 +22,12 @@ import PhoneMockupCuadreApp from './mockups/PhoneMockupCuadreApp.vue'
             Gestión de personal y nómina básica, asistencias, permisos, documentos y pagos.
           </p>
           <a
-            href="#"
+            href="https://talentoya.com.co"
+            target="_blank"
+            rel="noopener noreferrer"
             class="group mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"
           >
-            Ver demo <ArrowRight class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            Ver Proyecto <ArrowRight class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
           </a>
           <div class="mt-6">
             <BrowserMockupTalentoYa />
@@ -43,9 +45,9 @@ import PhoneMockupCuadreApp from './mockups/PhoneMockupCuadreApp.vue'
             >
               PRODUCTO PROPIO
             </span>
-            <h3 class="mt-4 text-xl font-semibold text-text-primary">CuadreApp</h3>
+            <h3 class="mt-4 text-xl font-semibold text-text-primary">Perfumeria Palomino</h3>
             <p class="mt-2 text-sm text-text-secondary leading-relaxed">
-              Control de caja para negocios con efectivo. Ventas, gastos, arqueos y cierres de caja diarios.
+              Sistema de gestión de ventas para una perfumería en Colombia.
             </p>
             <a
               href="#"

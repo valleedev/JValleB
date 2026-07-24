@@ -7,7 +7,7 @@ const checks = ['Menos Excel y WhatsApp', 'Control real de tu operación', 'Hech
 </script>
 
 <template>
-  <section class="relative overflow-hidden">
+  <section id="inicio" class="relative overflow-hidden">
     <div class="mx-auto max-w-7xl px-6 pt-16 pb-24 lg:pt-24 lg:pb-32 grid lg:grid-cols-2 gap-16 items-center">
       <div>
         <span

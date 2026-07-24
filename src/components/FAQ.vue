@@ -33,7 +33,7 @@ function toggle(i) {
 </script>
 
 <template>
-  <section class="border-t border-border">
+  <section id="faq" class="border-t border-border">
     <div class="mx-auto max-w-3xl px-6 py-20 lg:py-28">
       <h2 v-reveal class="text-3xl sm:text-4xl font-bold text-text-primary text-center">Preguntas frecuentes</h2>
 

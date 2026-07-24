@@ -19,7 +19,7 @@ const rows = [
       <div class="px-4 pb-5 pt-1 space-y-3">
         <div class="flex items-center gap-1.5 text-text-primary font-mono text-xs font-medium">
           <Wallet class="h-3.5 w-3.5 text-accent" />
-          <span>CuadreApp</span>
+          <span>Perfumeria Palomino</span>
         </div>
 
         <div class="space-y-2">

@@ -1,5 +1,5 @@
 <script setup>
-import { Wrench, Workflow, Globe, ArrowRight } from 'lucide-vue-next'
+import { Wrench, Workflow, Globe } from 'lucide-vue-next'
 
 const servicios = [
   {
@@ -44,8 +44,6 @@ const servicios = [
             <span class="text-text-secondary font-mono text-sm mr-2">0{{ i + 1 }}.</span>{{ s.titulo }}
           </h3>
           <p class="mt-3 text-sm text-text-secondary leading-relaxed flex-1">{{ s.desc }}</p>
-
-          <ArrowRight class="mt-5 h-4 w-4 text-text-secondary group-hover:text-accent group-hover:translate-x-1 transition-all" />
         </div>
       </div>
     </div>

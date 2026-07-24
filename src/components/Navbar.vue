@@ -6,9 +6,10 @@ const scrolled = ref(false)
 const mobileOpen = ref(false)
 
 const links = [
+  { label: 'Inicio', href: '#inicio' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Sobre mí', href: '#para-quien-es' },
+  { label: 'Preguntas frecuentes', href: '#faq' },
 ]
 
 function onScroll() {

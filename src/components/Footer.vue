@@ -1,15 +1,15 @@
 <script setup>
-import { Instagram, Linkedin, Mail } from 'lucide-vue-next'
+import { Linkedin, Mail } from 'lucide-vue-next'
 
 const links = [
+  { label: 'Inicio', href: '#inicio' },
   { label: 'Servicios', href: '#servicios' },
   { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Sobre mí', href: '#para-quien-es' },
+  { label: 'Preguntas frecuentes', href: '#faq' },
 ]
 
 const socials = [
-  { icon: Instagram, href: 'https://instagram.com/jvalleb', label: 'Instagram' },
-  { icon: Linkedin, href: 'https://linkedin.com/in/jvalleb', label: 'LinkedIn' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/sebasvalle', label: 'LinkedIn' },
   { icon: Mail, href: 'mailto:jvalleb@voida.com.co', label: 'Correo' },
 ]
 </script>
