@@ -50,10 +50,12 @@ import PhoneMockupCuadreApp from './mockups/PhoneMockupCuadreApp.vue'
               Sistema de gestión de ventas para una perfumería en Colombia.
             </p>
             <a
-              href="#"
+              href="https://perfumeriapalomino.jsvb.dev"
+              target="_blank"
+              rel="noopener noreferrer"
               class="group mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"
             >
-              Ver demo <ArrowRight class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+              Ver Resumen <ArrowRight class="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
           </div>
           <div class="mx-auto sm:mx-0 shrink-0">
